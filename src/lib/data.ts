@@ -11,7 +11,7 @@ export const PERSONAL = {
   company:  'PepsiCo Canada',
   email:    '97nisargpatel@gmail.com',
   github:   'https://github.com/npnisarg',
-  linkedin: 'https://linkedin.com/in/npnisarg',
+  linkedin: 'https://www.linkedin.com/in/patelnisarg97',
   website:  'https://npnisarg.github.io',
   interests: ['Reading', 'Biking', 'City Photography'],
 }

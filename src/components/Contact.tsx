@@ -41,7 +41,7 @@ export default function Contact() {
 
   const socials = [
     { name: 'Email',    handle: PERSONAL.email,    href: `mailto:${PERSONAL.email}`,  icon: '@',  color: 'rgba(124,58,237,' },
-    { name: 'LinkedIn', handle: '/in/npnisarg',     href: PERSONAL.linkedin,            icon: 'in', color: 'rgba(2,132,199,'  },
+    { name: 'LinkedIn', handle: '/in/patelnisarg97', href: PERSONAL.linkedin,            icon: 'in', color: 'rgba(2,132,199,'  },
     { name: 'GitHub',   handle: '@npnisarg',        href: PERSONAL.github,              icon: 'GH', color: 'rgba(28,20,16,'  },
   ]
 
