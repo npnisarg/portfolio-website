@@ -3,8 +3,11 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Nisarg Patel — Data Scientist',
-  description: 'Data Scientist at FGF Brands, Toronto. Expert in Machine Learning, Deep Learning, NLP, and Data Analytics. University of Toronto M.Eng graduate.',
+  description: 'Data Scientist at PepsiCo Canada, Toronto. Expert in Machine Learning, Agentic AI, NLP, and Data Analytics. University of Toronto M.Eng graduate.',
   keywords: ['Data Scientist', 'Machine Learning', 'Deep Learning', 'NLP', 'Python', 'Toronto', 'Nisarg Patel'],
+  icons: {
+    icon: '/favicon.svg',
+  },
   openGraph: {
     title: 'Nisarg Patel — Data Scientist',
     description: 'Data Pipeline: Nisarg Patel\'s Journey through ML, AI, and Data Science.',
