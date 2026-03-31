@@ -10,13 +10,33 @@ export default function Contact() {
   useInView(ref, { once: true, margin: '-80px' })
   const [sent, setSent]       = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError]     = useState('')
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setLoading(true)
-    await new Promise(r => setTimeout(r, 1200))
+    setError('')
+
+    const form = e.currentTarget
+    const body = {
+      name:    (form.elements.namedItem('name')    as HTMLInputElement).value,
+      email:   (form.elements.namedItem('email')   as HTMLInputElement).value,
+      subject: (form.elements.namedItem('subject') as HTMLInputElement).value,
+      message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
+    }
+
+    const res = await fetch('/api/contact', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify(body),
+    })
+
     setLoading(false)
-    setSent(true)
+    if (res.ok) {
+      setSent(true)
+    } else {
+      setError('Failed to send — please email me directly at 97nisargpatel@gmail.com')
+    }
   }
 
   const socials = [
@@ -49,19 +69,25 @@ export default function Contact() {
                 {!sent ? (
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div className="grid sm:grid-cols-2 gap-4">
-                      <Field label="Name" type="text" placeholder="Your name" />
-                      <Field label="Email" type="email" placeholder="your@email.com" />
+                      <Field label="Name"  name="name"  type="text"  placeholder="Your name" />
+                      <Field label="Email" name="email" type="email" placeholder="your@email.com" />
                     </div>
-                    <Field label="Subject" type="text" placeholder="What's this about?" />
+                    <Field label="Subject" name="subject" type="text" placeholder="What's this about?" />
                     <div className="space-y-1.5">
                       <label className="font-mono text-[11px] text-[#7A6050] tracking-widest uppercase">Message</label>
                       <textarea
+                        name="message"
                         rows={5}
                         required
                         placeholder="Tell me about your project or opportunity..."
                         className="w-full bg-[#1C1410]/[0.03] border border-[#1C1410]/[0.09] rounded-xl px-4 py-3 font-mono text-sm text-[#1C1410] placeholder:text-[#7A6050]/60 focus:outline-none focus:border-neon-purple/40 focus:bg-neon-purple/[0.04] transition-all resize-none"
                       />
                     </div>
+
+                    {error && (
+                      <p className="font-mono text-xs text-red-600 bg-red-50 border border-red-200 rounded-lg px-3 py-2">{error}</p>
+                    )}
+
                     <motion.button
                       type="submit"
                       disabled={loading}
@@ -110,7 +136,7 @@ export default function Contact() {
                       {s.icon}
                     </div>
                     <div>
-                      <div className="font-mono text-xs text-[#1C1410] group-hover:text-[#1C1410] transition-colors">{s.name}</div>
+                      <div className="font-mono text-xs text-[#1C1410]">{s.name}</div>
                       <div className="font-mono text-[11px] text-[#7A6050] mt-0.5">{s.handle}</div>
                     </div>
                     <span className="ml-auto text-[#7A6050]/60 group-hover:text-[#5C4A3A] transition-colors text-sm">→</span>
@@ -134,12 +160,14 @@ export default function Contact() {
   )
 }
 
-function Field({ label, type, placeholder }: { label: string; type: string; placeholder: string }) {
+function Field({ label, name, type, placeholder }: { label: string; name: string; type: string; placeholder: string }) {
   return (
     <div className="space-y-1.5">
       <label className="font-mono text-[11px] text-[#7A6050] tracking-widest uppercase">{label}</label>
       <input
+        name={name}
         type={type}
+        required
         placeholder={placeholder}
         className="w-full bg-[#1C1410]/[0.03] border border-[#1C1410]/[0.09] rounded-xl px-4 py-3 font-mono text-sm text-[#1C1410] placeholder:text-[#7A6050]/60 focus:outline-none focus:border-neon-purple/40 focus:bg-neon-purple/[0.04] transition-all"
       />
