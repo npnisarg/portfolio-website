@@ -1,0 +1,271 @@
+// ═══════════════════════════════════════════════════
+//  NISARG PATEL — PORTFOLIO DATA  (from resume)
+// ═══════════════════════════════════════════════════
+
+export const PERSONAL = {
+  name:     'Nisarg Patel',
+  title:    'Data Scientist',
+  tagline:  'Turning complex AI capabilities into tangible, scalable business outcomes.',
+  bio:      "Data Scientist with 3+ years of experience building and deploying ML models, agentic AI systems, and data pipelines that drive measurable business impact. Proven track record of owning solutions end-to-end — from data engineering and model development to production deployment — translating complex AI into clear business narratives for technical and non-technical stakeholders.",
+  location: 'Mississauga / Toronto, Ontario, Canada',
+  company:  'PepsiCo Canada',
+  email:    '97nisargpatel@gmail.com',
+  phone:    '+1 (647) 564-4594',
+  github:   'https://github.com/npnisarg',
+  linkedin: 'https://linkedin.com/in/npnisarg',
+  website:  'https://npnisarg.github.io',
+  interests: ['Reading', 'Biking', 'City Photography'],
+}
+
+export const EDUCATION = [
+  {
+    degree:   'Master of Engineering',
+    field:    'Industrial Engineering — Data Analytics',
+    school:   'University of Toronto',
+    location: 'Toronto, ON',
+    years:    'Dec 2022',
+    icon:     '🎓',
+    highlights: ['Data Analytics Emphasis', 'Industrial Engineering', 'ML & Optimization'],
+    color:    'purple',
+  },
+  {
+    degree:   'Bachelor of Engineering',
+    field:    'Industrial Engineering',
+    school:   'Gujarat Technological University',
+    location: 'India',
+    years:    'Jun 2019',
+    icon:     '🏛️',
+    highlights: ['Industrial Engineering', 'Operations Research', 'Statistics'],
+    color:    'cyan',
+  },
+]
+
+export const EXPERIENCE = [
+  {
+    role:     'Data Scientist',
+    company:  'PepsiCo Canada',
+    type:     'Full-time',
+    dates:    'Feb 2024 – Present',
+    location: 'Mississauga, ON',
+    icon:     '🔵',
+    color:    'purple',
+    bullets: [
+      'Built a logistics automation platform for trailer detention & freight invoice reconciliation using ML, ETL pipelines, and Power Automate — cutting detention costs ~75%, saving $0.5M+ CAD annually.',
+      'Built an ML model tracking competitor promotions in salty snacks, recommending counter strategies and recovering 0.2 market share ppts during periods of competitive pressure.',
+      'Built an inventory obsolescence engine flagging at-risk SKUs early with tiered action recommendations (promos, reallocation, write-off), projected to cut write-offs by 50%.',
+      'Designed an LLM-powered coordination tool for production & maintenance teams, replacing manual handoffs and improving equipment uptime and headcount utilization.',
+      'Built a conversational AI agent over Nielsen & internal PepsiCo data using RAG, empowering sales, marketing, and leadership to independently explore category performance.',
+      'Built a store-level display placement model using POS data and seasonality signals, automating merchandising decisions surfaced through a Power BI dashboard.',
+      'Led PepsiCo\'s IT Co-op Program end-to-end, partnering with HR on hiring strategy and personally mentoring co-op students each term.',
+      'Global Top-2 Finalist at PepsiCo\'s Next Big Idea competition, pitching an innovative product concept to global leadership.',
+    ],
+    tags: ['Python', 'ML', 'RAG', 'LLMs', 'Power BI', 'Power Automate', 'ETL', 'Agentic AI'],
+    metrics: ['$0.5M+ saved', '75% cost cut', '0.2 ppts recovered', 'Top-2 Global'],
+  },
+  {
+    role:     'Data Scientist',
+    company:  'Bimbo Canada (Canada Bread)',
+    type:     'Full-time',
+    dates:    'Jul 2023 – Feb 2024',
+    location: 'Mississauga, ON',
+    icon:     '🟣',
+    color:    'cyan',
+    bullets: [
+      'Designed and deployed ML models to forecast sales across 10,000+ store-product combinations, improving forecast accuracy by 10% and directly optimizing production planning.',
+      'Migrated databases from MS Access to a centralized SQL data warehouse, cutting reporting time by 50% and driving the business decision to fully transition away from legacy systems.',
+    ],
+    tags: ['Python', 'SQL', 'ML', 'Time Series', 'Data Warehousing', 'Forecasting'],
+    metrics: ['10K+ SKUs', '+10% accuracy', '50% faster reporting'],
+  },
+  {
+    role:     'Data Scientist (Co-op)',
+    company:  'FGF Brands',
+    type:     'Co-op',
+    dates:    'Jan 2023 – Jul 2023',
+    location: 'North York, ON',
+    icon:     '🟢',
+    color:    'green',
+    bullets: [
+      'Built an XGBoost-based time series forecasting model to optimize production planning, improving scheduling efficiency and reducing operational waste.',
+      'Contributed to a deep learning piece counting model driving production line efficiency to an OEE score of 90%, increasing throughput and minimizing downtime.',
+      'Collaborated on a deep learning model for foreign material detection in food products — end-to-end development including data generation, preprocessing, and training.',
+    ],
+    tags: ['Python', 'XGBoost', 'Deep Learning', 'Time Series', 'Computer Vision'],
+    metrics: ['OEE 90%', 'Waste reduced', '3 DL models'],
+  },
+]
+
+export const PROJECTS = [
+  // ── Professional / Resume Projects (internal — no public repo) ──
+  {
+    id: 1,
+    title:   'Agentic AI System for Purchase Orders',
+    desc:    'Stateful multi-agent AI system (CrewAI) that monitors emails, tracks PO approval status, triggers automated follow-ups, and enforces time-based escalation workflows. Full frontend–backend integration with a modern web UI, optimized for production reliability.',
+    tags:    ['Python', 'CrewAI', 'Multi-Agent', 'LLMs', 'API Integration', 'Agentic AI'],
+    type:    'GenAI',
+    github:  '',
+    metrics: [{ val: 'Multi', lab: 'Agent' }, { val: 'Auto', lab: 'Escalation' }, { val: 'Prod', lab: 'Ready' }],
+  },
+  {
+    id: 2,
+    title:   'Trailer Detention & Freight Invoice Reconciliation',
+    desc:    'Python ML classification model trained on historical trailer movement and carrier data to predict detention risk. SQL ETL pipelines consolidate multi-source freight data, with a Copilot Studio agent reconciling invoices and Power Automate triggering automated alerts.',
+    tags:    ['Python', 'ML', 'SQL ETL', 'Power Automate', 'Copilot Studio', 'Power Apps'],
+    type:    'ML',
+    github:  '',
+    metrics: [{ val: '75%', lab: 'Cost Cut' }, { val: '$0.5M+', lab: 'Saved' }, { val: 'Auto', lab: 'Alerts' }],
+  },
+  {
+    id: 3,
+    title:   'SAP Data Ingestion Platform',
+    desc:    'Modular, metadata-driven SAP ingestion framework landing raw SAP data into a data warehouse and transforming it into analytics-ready tables using SQL-based ETL across multiple SAP modules. Self-service UI for connector configuration and pipeline monitoring.',
+    tags:    ['Python', 'SQL', 'ETL', 'Data Warehouse', 'SAP', 'Self-service UI'],
+    type:    'Data',
+    github:  '',
+    metrics: [{ val: 'Multi', lab: 'SAP Modules' }, { val: 'Self', lab: 'Service UI' }],
+  },
+  {
+    id: 4,
+    title:   'Conversational AI Agent — Nielsen & PepsiCo Data',
+    desc:    'RAG-powered conversational AI agent over Nielsen market data and internal PepsiCo datasets, enabling sales, marketing, and leadership to independently explore category performance — eliminating manual analyst requests.',
+    tags:    ['Python', 'RAG', 'LLMs', 'NLP', 'Vector Search', 'Conversational AI'],
+    type:    'GenAI',
+    github:  '',
+    metrics: [{ val: 'RAG', lab: 'Architecture' }, { val: 'Self', lab: 'Service' }],
+  },
+  {
+    id: 5,
+    title:   'Sales Forecasting — 10K+ Store-Product Combos',
+    desc:    'End-to-end ML forecasting system across 10,000+ store-product combinations at Bimbo Canada. Improved forecast accuracy by 10% and directly optimized production planning at scale.',
+    tags:    ['Python', 'ML', 'Time Series', 'scikit-learn', 'Forecasting', 'SQL'],
+    type:    'ML',
+    github:  '',
+    metrics: [{ val: '10K+', lab: 'SKUs' }, { val: '+10%', lab: 'Accuracy' }],
+  },
+  {
+    id: 6,
+    title:   'Deep Learning — OEE Production Efficiency',
+    desc:    'Deep learning piece counting model and foreign material detection system for food production lines at FGF Brands. Drove OEE score to 90%, increasing throughput and minimizing downtime.',
+    tags:    ['Python', 'TensorFlow', 'Deep Learning', 'Computer Vision', 'XGBoost'],
+    type:    'DL',
+    github:  '',
+    metrics: [{ val: '90%', lab: 'OEE Score' }, { val: '↓', lab: 'Downtime' }],
+  },
+
+  // ── Personal / Academic Projects (public GitHub) ──
+  {
+    id: 7,
+    title:   'Sales Forecasting — Stacked Ensemble Model',
+    desc:    'Stacked ensemble model combining multiple ML regressors (XGBoost, Random Forest, Ridge) with a meta-learner for improved sales forecasting accuracy. Documented in detail on Medium with feature engineering and cross-validation methodology.',
+    tags:    ['Python', 'XGBoost', 'Ensemble Methods', 'scikit-learn', 'Feature Engineering'],
+    type:    'ML',
+    github:  'https://github.com/npnisarg',
+    metrics: [{ val: 'Stack', lab: 'Ensemble' }, { val: 'CV', lab: 'Validated' }],
+  },
+  {
+    id: 8,
+    title:   'Toronto Bike Share Analysis',
+    desc:    'Interactive exploratory analysis of Toronto Bike Share ridership data using Plotly. Visualizes usage patterns by station, time of day, and season — uncovering commuter vs. leisure usage insights across the city network.',
+    tags:    ['Python', 'Plotly', 'EDA', 'Data Visualization', 'Pandas'],
+    type:    'Data',
+    github:  'https://github.com/npnisarg',
+    metrics: [{ val: 'Plotly', lab: 'Interactive' }, { val: 'EDA', lab: 'Analysis' }],
+  },
+  {
+    id: 9,
+    title:   'Power BI — Canada Grocery Price Growth',
+    desc:    'Interactive Power BI dashboard tracking the rise of grocery prices across Canadian regions and categories. Combines Statistics Canada data with retail pricing trends to visualize the cost-of-living impact on Canadian households.',
+    tags:    ['Power BI', 'DAX', 'Data Modeling', 'Statistics Canada', 'Dashboard'],
+    type:    'Data',
+    github:  'https://github.com/npnisarg',
+    metrics: [{ val: 'Power BI', lab: 'Dashboard' }, { val: 'StatCan', lab: 'Data' }],
+  },
+  {
+    id: 10,
+    title:   'Video Classification — Deep Learning',
+    desc:    'Video classification pipeline using CNN+LSTM architecture to extract spatial features frame-by-frame and model temporal sequences. Trained and evaluated on benchmark action recognition datasets with transfer learning from ResNet.',
+    tags:    ['Python', 'TensorFlow', 'CNN', 'LSTM', 'Computer Vision', 'Transfer Learning'],
+    type:    'DL',
+    github:  'https://github.com/npnisarg',
+    metrics: [{ val: 'CNN+LSTM', lab: 'Architecture' }, { val: 'Video', lab: 'Temporal' }],
+  },
+  {
+    id: 11,
+    title:   'Sentiment Analysis — Canadian Elections',
+    desc:    'ML and deep learning sentiment classification on Twitter/social data during Canadian federal elections. Compared traditional ML (TF-IDF + SVM) against BERT fine-tuning for political sentiment detection across party lines.',
+    tags:    ['Python', 'BERT', 'NLP', 'scikit-learn', 'Transformers', 'Twitter API'],
+    type:    'ML',
+    github:  'https://github.com/npnisarg',
+    metrics: [{ val: 'BERT', lab: 'Fine-tuned' }, { val: 'NLP', lab: 'Sentiment' }],
+  },
+  {
+    id: 12,
+    title:   'Spam Detection — RNN & Transfer Learning',
+    desc:    'Spam email classification comparing RNN/LSTM baselines against transfer learning with pretrained language models. Benchmarks accuracy, precision, and recall across architectures on public email spam datasets.',
+    tags:    ['Python', 'TensorFlow', 'RNN', 'LSTM', 'Transfer Learning', 'NLP'],
+    type:    'ML',
+    github:  'https://github.com/npnisarg',
+    metrics: [{ val: 'RNN', lab: 'vs Transfer' }, { val: 'NLP', lab: 'Classification' }],
+  },
+  {
+    id: 13,
+    title:   'Web Scraping — Custom Data Science Curriculum',
+    desc:    'Web scraping pipeline that aggregates Data Science course content from online platforms, structures it by topic and difficulty level, and generates a personalized learning roadmap — demonstrating full ETL from raw web data to structured output.',
+    tags:    ['Python', 'BeautifulSoup', 'Scrapy', 'Pandas', 'Web Scraping', 'ETL'],
+    type:    'Data',
+    github:  'https://github.com/npnisarg',
+    metrics: [{ val: 'ETL', lab: 'Pipeline' }, { val: 'Auto', lab: 'Curriculum' }],
+  },
+]
+
+export const SKILLS: { category: string; icon: string; color: string; items: { name: string; pct: number }[] }[] = [
+  {
+    category: 'Agentic AI',
+    icon: '🤖',
+    color: 'purple',
+    items: [
+      { name: 'Multi-Agent Systems',        pct: 90 },
+      { name: 'RAG Pipelines',              pct: 92 },
+      { name: 'LLM Integration',            pct: 88 },
+      { name: 'Conversational AI',          pct: 85 },
+      { name: 'Workflow Orchestration',     pct: 87 },
+    ],
+  },
+  {
+    category: 'ML & Analytics',
+    icon: '🧠',
+    color: 'blue',
+    items: [
+      { name: 'Time Series Forecasting',    pct: 93 },
+      { name: 'Classification / Regression',pct: 92 },
+      { name: 'Deep Learning / CV',         pct: 82 },
+      { name: 'NLP',                        pct: 85 },
+      { name: 'A/B Testing & Causal Inf.',  pct: 80 },
+    ],
+  },
+  {
+    category: 'Data & Cloud',
+    icon: '☁️',
+    color: 'cyan',
+    items: [
+      { name: 'SQL & ETL Pipelines',        pct: 92 },
+      { name: 'Databricks / PySpark',       pct: 82 },
+      { name: 'Azure Synapse / Data Factory',pct: 78 },
+      { name: 'Data Warehousing',           pct: 85 },
+    ],
+  },
+  {
+    category: 'Power Platform',
+    icon: '📊',
+    color: 'pink',
+    items: [
+      { name: 'Power BI',                   pct: 90 },
+      { name: 'Power Automate',             pct: 85 },
+      { name: 'Power Apps',                 pct: 78 },
+      { name: 'Copilot Studio',             pct: 80 },
+    ],
+  },
+]
+
+export const FILTER_OPTIONS = ['All', 'GenAI', 'ML', 'DL', 'Data'] as const
+export type FilterOption = typeof FILTER_OPTIONS[number]

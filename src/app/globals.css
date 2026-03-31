@@ -1,0 +1,227 @@
+/* JetBrains Mono: distinctive technical mono — characterful, legible, professional */
+/* Syne: bold geometric display font — editorial energy, memorable headlines */
+/* DM Sans: clean humanist sans for body text */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-mono:    'JetBrains Mono';
+  --font-sans:    'DM Sans';
+  --font-display: 'Syne';
+
+  /* Warm cream palette */
+  --bg:           #F4F0E8;
+  --bg-card:      #FFFFFF;
+  --text-1:       #1C1410;
+  --text-2:       #5C4A3A;
+  --text-3:       #9C8A78;
+  --border:       rgba(28,20,16,0.09);
+  --border-soft:  rgba(28,20,16,0.06);
+  --shadow-sm:    rgba(28,20,16,0.07);
+  --shadow-md:    rgba(28,20,16,0.12);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #7C3AED #F0EBE1;
+}
+
+::-webkit-scrollbar       { width: 4px; }
+::-webkit-scrollbar-track { background: #F0EBE1; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #7C3AED, #0284C7);
+  border-radius: 2px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-1);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ── SELECTION ── */
+::selection {
+  background: rgba(124,58,237,0.18);
+  color: #1C1410;
+}
+
+/* ── GLOW UTILITIES ── */
+.glow-purple { box-shadow: 0 0 20px rgba(124,58,237,0.35), 0 0 40px rgba(124,58,237,0.15); }
+.glow-cyan   { box-shadow: 0 0 20px rgba(2,132,199,0.35),  0 0 40px rgba(2,132,199,0.15); }
+.glow-green  { box-shadow: 0 0 20px rgba(5,150,105,0.35),  0 0 40px rgba(5,150,105,0.15); }
+.glow-pink   { box-shadow: 0 0 20px rgba(219,39,119,0.35), 0 0 40px rgba(219,39,119,0.15); }
+
+.text-glow-purple { text-shadow: 0 0 20px rgba(124,58,237,0.5); }
+.text-glow-cyan   { text-shadow: 0 0 20px rgba(2,132,199,0.5); }
+.text-glow-green  { text-shadow: 0 0 20px rgba(5,150,105,0.5); }
+
+/* ── GRADIENT TEXT — deep, rich on cream ── */
+.gradient-text {
+  background: linear-gradient(135deg, #6D28D9, #0369A1, #9D174D);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-x 5s ease infinite;
+}
+
+@keyframes gradient-x {
+  0%,100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+
+/* ── SECTION GLASS — warm cream glass ── */
+.section-glass {
+  background: rgba(244,240,232,0.55);
+  backdrop-filter: blur(2px);
+}
+
+/* ── PIPELINE LINE ANIMATION ── */
+@keyframes data-flow {
+  0%   { stroke-dashoffset: 1000; opacity: 1; }
+  100% { stroke-dashoffset: 0;    opacity: 0.3; }
+}
+.data-flow-line {
+  stroke-dasharray: 8 6;
+  animation: data-flow 3s linear infinite;
+}
+
+/* ── CARD GLOW — white cards floating on cream ── */
+.card-glow {
+  position: relative;
+  background: rgba(255,253,250,0.92);
+  border: 1px solid rgba(28,20,16,0.09);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow:
+    0 2px 16px rgba(28,20,16,0.06),
+    0 1px 4px rgba(28,20,16,0.04);
+  transition: all 0.35s;
+}
+.card-glow::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(124,58,237,0.35), rgba(2,132,199,0.2));
+  opacity: 0;
+  transition: opacity 0.35s;
+  z-index: -1;
+}
+.card-glow:hover::before { opacity: 1; }
+.card-glow:hover {
+  border-color: transparent;
+  box-shadow:
+    0 8px 40px rgba(28,20,16,0.1),
+    0 2px 8px rgba(28,20,16,0.06);
+  transform: translateY(-1px);
+}
+
+/* ── SECTION SEPARATOR ── */
+.section-sep {
+  width: 60px; height: 3px;
+  background: linear-gradient(90deg, #7C3AED, #0284C7);
+  border-radius: 2px;
+  box-shadow: 0 0 12px rgba(124,58,237,0.35);
+}
+
+/* ── VERY SUBTLE SCANLINE — almost imperceptible texture ── */
+@keyframes scanline {
+  0%   { transform: translateY(-100vh); }
+  100% { transform: translateY(100vh); }
+}
+.scanline-overlay::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    rgba(124,58,237,0.006) 50%,
+    transparent 100%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 2;
+  animation: scanline 12s linear infinite;
+}
+
+/* ── CORNER BRACKETS ── */
+.corner-bracket { position: relative; }
+.corner-bracket::before,
+.corner-bracket::after {
+  content: '';
+  position: absolute;
+  width: 12px; height: 12px;
+  border-color: rgba(124,58,237,0.35);
+  border-style: solid;
+  transition: all 0.3s;
+}
+.corner-bracket::before {
+  top: -1px; left: -1px;
+  border-width: 1.5px 0 0 1.5px;
+  border-radius: 2px 0 0 0;
+}
+.corner-bracket::after {
+  bottom: -1px; right: -1px;
+  border-width: 0 1.5px 1.5px 0;
+  border-radius: 0 0 2px 0;
+}
+.corner-bracket:hover::before,
+.corner-bracket:hover::after {
+  border-color: rgba(2,132,199,0.6);
+  width: 18px; height: 18px;
+}
+
+/* ── SKILL BAR ── */
+.skill-fill {
+  background: linear-gradient(90deg, #6D28D9, #0284C7);
+  box-shadow: 0 0 10px rgba(124,58,237,0.4);
+  border-radius: 4px;
+  height: 100%;
+  transform-origin: left;
+}
+
+/* ── SCROLL REVEAL UTILITIES ── */
+.reveal-up    { opacity: 0; transform: translateY(40px); }
+.reveal-left  { opacity: 0; transform: translateX(-40px); }
+.reveal-right { opacity: 0; transform: translateX(40px); }
+.reveal-scale { opacity: 0; transform: scale(0.93); }
+.revealed     { opacity: 1; transform: none; transition: all 0.7s cubic-bezier(0.25,0.46,0.45,0.94); }
+
+/* ── MARQUEE ── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track { animation: marquee 20s linear infinite; }
+.marquee-track:hover { animation-play-state: paused; }
+
+/* ── BUTTON SHIMMER ── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.btn-shimmer {
+  background: linear-gradient(90deg,
+    #6D28D9 0%, #7C3AED 30%, #0284C7 50%, #7C3AED 70%, #6D28D9 100%
+  );
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+
+/* ── ORB UTILITIES ── */
+.orb-purple { background: radial-gradient(circle, rgba(124,58,237,0.1) 0%, transparent 70%); }
+.orb-cyan   { background: radial-gradient(circle, rgba(2,132,199,0.08) 0%, transparent 70%); }
+.orb-blue   { background: radial-gradient(circle, rgba(37,99,235,0.07) 0%, transparent 70%); }
+
+/* ── RESPONSIVE TWEAKS ── */
+@media (max-width: 768px) {
+  .card-glow { backdrop-filter: none; }
+}
