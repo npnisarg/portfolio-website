@@ -10,7 +10,6 @@ export const PERSONAL = {
   location: 'Mississauga / Toronto, Ontario, Canada',
   company:  'PepsiCo Canada',
   email:    '97nisargpatel@gmail.com',
-  phone:    '+1 (647) 564-4594',
   github:   'https://github.com/npnisarg',
   linkedin: 'https://linkedin.com/in/npnisarg',
   website:  'https://npnisarg.github.io',

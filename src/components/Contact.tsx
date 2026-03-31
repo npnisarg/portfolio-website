@@ -43,7 +43,6 @@ export default function Contact() {
     { name: 'Email',    handle: PERSONAL.email,    href: `mailto:${PERSONAL.email}`,  icon: '@',  color: 'rgba(124,58,237,' },
     { name: 'LinkedIn', handle: '/in/npnisarg',     href: PERSONAL.linkedin,            icon: 'in', color: 'rgba(2,132,199,'  },
     { name: 'GitHub',   handle: '@npnisarg',        href: PERSONAL.github,              icon: 'GH', color: 'rgba(28,20,16,'  },
-    { name: 'Phone',    handle: PERSONAL.phone,     href: `tel:${PERSONAL.phone}`,      icon: '☎', color: 'rgba(5,150,105,' },
   ]
 
   return (
