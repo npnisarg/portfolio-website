@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'Data Scientist at PepsiCo Canada, Toronto. Expert in Machine Learning, Agentic AI, NLP, and Data Analytics. University of Toronto M.Eng graduate.',
   keywords: ['Data Scientist', 'Machine Learning', 'Deep Learning', 'NLP', 'Python', 'Toronto', 'Nisarg Patel'],
   icons: {
-    icon: '/favicon.svg',
+    icon: '/Logo.png',
   },
   openGraph: {
     title: 'Nisarg Patel — Data Scientist',

@@ -56,7 +56,7 @@ export default function Hero() {
     <section
       id="hero"
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden px-6"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 pt-20 md:pt-0"
     >
       {/* ── Orb blobs ── */}
       <motion.div

@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Image from 'next/image'
 import { PERSONAL } from '@/lib/data'
 
 const LINKS = [
@@ -64,8 +65,8 @@ export default function Navigation() {
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           {/* Logo */}
           <a href="#hero" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-neon-purple to-neon-cyan flex items-center justify-center text-sm font-bold text-white shadow-lg group-hover:scale-105 transition-transform">
-              NP
+            <div className="w-8 h-8 flex items-center justify-center group-hover:scale-105 transition-transform">
+              <Image src="/Logo.png" alt="Nisarg Patel" width={32} height={32} className="object-contain" />
             </div>
             <span className="font-mono text-sm text-[#5C4A3A] tracking-widest group-hover:text-neon-purple transition-colors">
               nisarg.dev
