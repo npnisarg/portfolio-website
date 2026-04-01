@@ -7,7 +7,7 @@ export const PERSONAL = {
   title:    'Data Scientist',
   tagline:  'Turning complex AI capabilities into tangible, scalable business outcomes.',
   bio:      "Data Scientist with 3+ years of experience building and deploying ML models, agentic AI systems, and data pipelines that drive measurable business impact. Proven track record of owning solutions end-to-end — from data engineering and model development to production deployment — translating complex AI into clear business narratives for technical and non-technical stakeholders.",
-  location: 'Mississauga / Toronto, Ontario, Canada',
+  location: 'Toronto, Canada',
   company:  'PepsiCo Canada',
   email:    '97nisargpatel@gmail.com',
   github:   'https://github.com/npnisarg',

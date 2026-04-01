@@ -134,7 +134,7 @@ export default function Hero() {
                 className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 style={{ background: 'linear-gradient(135deg, #6D28D9, #0369A1)' }}
               />
-              <span className="relative z-10 flex items-center gap-2">Explore Pipeline ↓</span>
+              <span className="relative z-10 flex items-center gap-2">Explore Projects ↓</span>
             </motion.a>
 
             <motion.a
@@ -160,9 +160,8 @@ export default function Hero() {
           </motion.div>
 
           {/* Stats */}
-          <motion.div variants={stagger.item} className="grid grid-cols-3 gap-8 max-w-sm mx-auto">
+          <motion.div variants={stagger.item} className="grid grid-cols-2 gap-8 max-w-sm mx-auto">
             {[
-              { val: '6+', lab: 'Projects' },
               { val: '3+', lab: 'Years Exp' },
               { val: 'M.Eng', lab: 'U of T' },
             ].map(s => (
