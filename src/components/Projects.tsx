@@ -97,12 +97,17 @@ function ProjectCard({ project, i }: { project: typeof PROJECTS[0]; i: number })
   )
 }
 
+const INITIAL_COUNT = 3
+
 export default function Projects() {
   const ref    = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-60px' })
-  const [filter, setFilter] = useState<FilterOption>('All')
+  const [filter, setFilter]     = useState<FilterOption>('All')
+  const [expanded, setExpanded] = useState(false)
 
-  const filtered = filter === 'All' ? PROJECTS : PROJECTS.filter(p => p.type === filter)
+  const filtered  = filter === 'All' ? PROJECTS : PROJECTS.filter(p => p.type === filter)
+  const visible   = expanded ? filtered : filtered.slice(0, INITIAL_COUNT)
+  const hasMore   = filtered.length > INITIAL_COUNT
 
   return (
     <section id="projects" className="relative py-28 px-6">
@@ -121,7 +126,7 @@ export default function Projects() {
           {FILTER_OPTIONS.map(opt => (
             <motion.button
               key={opt}
-              onClick={() => setFilter(opt)}
+              onClick={() => { setFilter(opt); setExpanded(false) }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.96 }}
               className="font-mono text-xs px-4 py-2 rounded-xl border transition-all duration-200"
@@ -141,16 +146,32 @@ export default function Projects() {
         {/* Grid */}
         <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           <AnimatePresence mode="popLayout">
-            {filtered.map((p, i) => <ProjectCard key={p.id} project={p} i={i} />)}
+            {visible.map((p, i) => <ProjectCard key={p.id} project={p} i={i} />)}
           </AnimatePresence>
         </motion.div>
 
+        {/* View More / Collapse */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
-          transition={{ delay: 0.7 }}
-          className="text-center mt-12"
+          transition={{ delay: 0.5 }}
+          className="text-center mt-10 flex flex-col items-center gap-4"
         >
+          {hasMore && (
+            <motion.button
+              onClick={() => setExpanded(v => !v)}
+              whileHover={{ scale: 1.03, y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center gap-2 px-7 py-3 rounded-xl border border-neon-purple/35 font-mono text-sm text-neon-purple hover:bg-neon-purple/8 hover:border-neon-purple/60 transition-all duration-200"
+            >
+              {expanded ? (
+                <>Show Less ↑</>
+              ) : (
+                <>View More Projects ({filtered.length - INITIAL_COUNT} more) ↓</>
+              )}
+            </motion.button>
+          )}
+
           <a
             href="https://github.com/npnisarg"
             target="_blank"
